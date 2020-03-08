@@ -9,9 +9,12 @@ export class Interceptor implements HttpInterceptor {
 
     intercept(req: HttpRequest<any>, next: HttpHandler) {
         const token = apiKey;
-
-        req = req.clone({ url: `${req.url}?api_key=${token}` }); 
         
+        if(req.url.indexOf("?") > -1)
+            req = req.clone({ url: `${req.url}&api_key=${token}` }); 
+        else
+            req = req.clone({ url: `${req.url}?api_key=${token}` }); 
+
         return next.handle(req);
     }
 }

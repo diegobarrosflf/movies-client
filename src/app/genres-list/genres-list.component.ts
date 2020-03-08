@@ -18,7 +18,6 @@ export class GenresListComponent implements OnInit {
 
   getGenres() {
     this.genresService.listGenres().subscribe(data => {
-      console.log(data.genres);
       this.genres = data.genres;
     })
   }

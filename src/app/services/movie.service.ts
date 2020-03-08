@@ -12,4 +12,8 @@ export class MovieService {
   getMovie(id){    
     return this.http.get<any>(`${apiUrl}/movie/${id}`);
   }
+
+  getMovieByGenre(id){
+    return this.http.get<any>(`${apiUrl}/discover/movie?with_genres=${id}`);
+  }
 }
