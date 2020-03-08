@@ -9,8 +9,7 @@ export class MovieService {
 
   constructor(private http: HttpClient) { }
 
-  getMovie(id){
-    
+  getMovie(id){    
     return this.http.get<any>(`${apiUrl}/movie/${id}`);
   }
 }
