@@ -17,15 +17,33 @@ export class MovieListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getActionMovies(28);
+    //this.getPopularMovies();
+    
+    
   } 
 
   getMovie(id) {
     this.movieService.getMovie(id).subscribe(data => console.log(data));
   }
+  
+  getPopularMovies(){
+    this.movieService.getPopularMovies().subscribe(
+      data => {
+        this.movieList = data.results;
+      }
+    )
+  }
 
-  getActionMovies(id){
-    this.movieService.getMovieByGenre(id).subscribe(
+  getUpComingMovies(){
+    this.movieService.getUpComingMovies().subscribe(
+      data => {
+        this.movieList = data.results;
+      }
+    )
+  }
+
+  getNowPlaying(){
+    this.movieService.getUpComingMovies().subscribe(
       data => {
         this.movieList = data.results;
       }

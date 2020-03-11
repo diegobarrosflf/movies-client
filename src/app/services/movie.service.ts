@@ -20,6 +20,18 @@ export class MovieService {
   searchMoviesByName(string){
     return this.http.get<any>(`${apiUrl}/search/movie?query=${string}`);
   }
+
+  getPopularMovies(){
+    return this.http.get<any>(`${apiUrl}/movie/popular`);
+  }
+
+  getUpComingMovies(){
+    return this.http.get<any>(`${apiUrl}/movie/upcoming?language=en-US`);
+  }
+
+  getNowPlayingMovies(){
+    return this.http.get<any>(`${apiUrl}/movie/now_playing?language=en-US`);
+  }
   
   
 }
