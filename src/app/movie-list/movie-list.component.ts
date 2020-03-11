@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MovieService } from "src/app/services/movie.service";
 
 
@@ -9,7 +9,7 @@ import { MovieService } from "src/app/services/movie.service";
 })
 export class MovieListComponent implements OnInit {
 
-  movieList;
+  @Input() movieList;
   movie;
 
   constructor(private movieService: MovieService) {
@@ -25,7 +25,7 @@ export class MovieListComponent implements OnInit {
   getMovie(id) {
     this.movieService.getMovie(id).subscribe(data => console.log(data));
   }
-  
+
   getPopularMovies(){
     this.movieService.getPopularMovies().subscribe(
       data => {

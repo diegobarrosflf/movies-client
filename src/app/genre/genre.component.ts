@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MovieService } from '../services/movie.service';
 
@@ -11,7 +11,7 @@ export class GenreComponent implements OnInit {
 
   id: any;
   name: string;
-  movieList: Array<any> = [];
+  @Output() movieList: Array<any> = [];
 
   constructor(private route: ActivatedRoute,
     private movieService: MovieService) {
