@@ -10,6 +10,8 @@ import { interceptorProviders } from './interceptors';
 import { GenresListComponent } from './genres-list/genres-list.component';
 import { GenreComponent } from './genre/genre.component';
 import { SearchComponent } from './search/search.component';
+import { RouterModule } from '@angular/router';
+import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,19 @@ import { SearchComponent } from './search/search.component';
     GenresListComponent,
     GenreComponent,
     routingComponents,
-    SearchComponent
+    SearchComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path: '', component: MovieListComponent},
+      { path: 'genre/:id/:name', component: GenreComponent},
+      { path: 'movie/:movieId', component: MovieDetailComponent}
+
+    ])
   ],
   providers: [interceptorProviders],
   bootstrap: [AppComponent]

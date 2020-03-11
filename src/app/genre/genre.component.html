@@ -1,16 +1,4 @@
 <h2 class="m-3"> {{name}}</h2>
-<div class="card m-3" *ngFor="let movie of movieList">
-    <div class="row no-gutters">
-      <div class="col-md-1">
-        <img src="http://image.tmdb.org/t/p/w185/{{movie.poster_path}}" class="card-img w-100" alt="...">
-      </div>
-      <div class="col-md-11">
-        <div class="card-body">
-          <h5 class="card-title">{{movie.title}}</h5>
-          <p class="card-text">{{movie.overview}}</p>
-          <p class="card-text"><small class="text-muted">Release {{movie.release}}</small></p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <app-movie-list></app-movie-list>
+  
   

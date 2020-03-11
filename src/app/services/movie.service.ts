@@ -19,5 +19,7 @@ export class MovieService {
 
   searchMoviesByName(string){
     return this.http.get<any>(`${apiUrl}/search/movie?query=${string}`);
-  } 
+  }
+  
+  
 }
