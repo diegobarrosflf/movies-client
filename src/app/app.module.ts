@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { interceptorProviders } from './interceptors';
 import { GenresListComponent } from './genres-list/genres-list.component';
 import { GenreComponent } from './genre/genre.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { GenreComponent } from './genre/genre.component';
     TopBarComponent,
     GenresListComponent,
     GenreComponent,
-    routingComponents
+    routingComponents,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

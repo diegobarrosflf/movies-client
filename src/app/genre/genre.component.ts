@@ -13,32 +13,26 @@ export class GenreComponent implements OnInit {
   name: string;
   movieList: Array<any> = [];
 
-  constructor(private route: ActivatedRoute, 
-    private movieService: MovieService) {   
+  constructor(private route: ActivatedRoute,
+    private movieService: MovieService) {
 
   }
 
   ngOnInit(): void {
     this.route.params.subscribe(routeParams => {
-      console.log("parametros: ", routeParams);
       this.id = routeParams.id;
       this.name = routeParams.name;
       this.getMoviesByGenre(this.id);
     });
-
-
-    
   }
 
-  getMoviesByGenre(id){
-    console.log("id movies: ", id)
-    this.movieService.getMovieByGenre(id).subscribe(data =>{
-      console.log(data);      
+  getMoviesByGenre(id) {
+    this.movieService.getMovieByGenre(id).subscribe(data => {
       this.movieList = data.results;
     })
-      
+
   }
 
-  
+
 
 }
