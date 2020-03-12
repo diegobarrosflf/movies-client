@@ -12,6 +12,7 @@ import { GenreComponent } from './genre/genre.component';
 import { SearchComponent } from './search/search.component';
 import { RouterModule } from '@angular/router';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { PopularMoviesListComponent } from './popular-movies-list/popular-movies-list.component';
 
 @NgModule({
   declarations: [
@@ -22,16 +23,18 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
     GenreComponent,
     routingComponents,
     SearchComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    PopularMoviesListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: '', component: MovieListComponent},
+      { path: 'home', component: PopularMoviesListComponent},
       { path: 'genre/:id/:name', component: GenreComponent},
-      { path: 'movie/:movieId', component: MovieDetailComponent}
+      { path: 'movie/:movieId', component: MovieDetailComponent},
+      { path: 'search/movie', component: MovieListComponent}
 
     ])
   ],

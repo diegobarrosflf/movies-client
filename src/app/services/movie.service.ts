@@ -1,5 +1,5 @@
 import { HttpClient } from "@angular/common/http";
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { apiUrl } from "src/environments/environment";
 
 @Injectable({
@@ -17,8 +17,8 @@ export class MovieService {
     return this.http.get<any>(`${apiUrl}/discover/movie?with_genres=${id}`);
   }
 
-  searchMoviesByName(string){
-    return this.http.get<any>(`${apiUrl}/search/movie?query=${string}`);
+  searchMoviesByName(term: string){
+    return this.http.get<any>(`${apiUrl}/search/movie?query=${term}`);
   }
 
   getPopularMovies(){

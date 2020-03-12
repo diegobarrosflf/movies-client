@@ -1,6 +1,14 @@
-<form class="form-inline my-2 my-lg-0">
-    <input #search id="search" class="form-control mr-sm-2" type="text" placeholder="Search..." aria-label="Search"/>
-    <button class="btn btn-outline-success my-2 my-sm-0" type="button"(click)="searchMoviesByName(search.value)">Search</button>
-</form>
+<div id="search-component" class="search input-group">
+    <input #searchBox id="search-box" (input)="searchMoviesByName(searchBox.value)" (click)="searchBox.value = null"
+    class="form-control mr-sm-2" type="text" placeholder="Search..." aria-label="Search"/>
 
 
+    <ul class="search-result" [hidden]="searchBox.value === ''">
+        <li *ngFor="let movie of movies">
+          <a routerLink="/movie/{{movie.id}}" (click)="searchBox.click()">
+            {{movie.title}}
+          </a>
+        </li>
+    </ul>
+
+</div>
