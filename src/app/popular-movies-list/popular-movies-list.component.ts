@@ -9,6 +9,8 @@ import { MovieService } from '../services/movie.service';
 export class PopularMoviesListComponent implements OnInit {
 
   popularMovies;
+  
+ 
 
   constructor(
     private movieService: MovieService
@@ -22,7 +24,8 @@ export class PopularMoviesListComponent implements OnInit {
   getPopularMovies(){
     this.movieService.getPopularMovies().subscribe(
       data => {
-        this.popularMovies = data.results
+        this.popularMovies = data.results.slice(0,10);
+        
       }
     )
   }

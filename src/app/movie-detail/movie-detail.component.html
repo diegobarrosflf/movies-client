@@ -1,11 +1,20 @@
-<h3 class="m-3">Movie Detail</h3>
-
-<div class="card m-3" style="width: 18rem;">
-  <img src="http://image.tmdb.org/t/p/w185/{{movie.poster_path}}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">{{movie.title}}</h5>    
-    <p class="card-text">{{movie.overview}}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+<h3 class="m-3">Movie Details</h3>
+<div class="card m-3">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="http://image.tmdb.org/t/p/w185/{{movie.poster_path}}" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h2 class="card-title">{{movie.title}}</h2>
+        <p>{{getDate(movie.release_date)}}</p>
+        <p>Users Score {{movie.vote_average}}</p>
+        <h4>Overview</h4>
+        <p class="card-text">{{movie.overview}}</p>
+        <h5>Genres</h5>
+        <p *ngFor="let genre of genresList">{{genre.name}}</p>
+        <p class="card-text"><small class="text-muted">{{movie.runtime}} min</small></p>
+      </div>
+    </div>
   </div>
 </div>
-

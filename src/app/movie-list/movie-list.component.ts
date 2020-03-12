@@ -49,5 +49,8 @@ export class MovieListComponent implements OnInit {
       }
     )
   }
+  getDate(date: string){
+    return date.substring(0,4);
+  }
 
 }

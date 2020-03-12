@@ -11,6 +11,7 @@ export class MovieDetailComponent implements OnInit {
 
   movieId;
   movie;
+  genresList;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,6 +23,8 @@ export class MovieDetailComponent implements OnInit {
       this.movieId = routeParams.movieId;
       this.getMovie(this.movieId);
     });
+  
+    
     
   }
 
@@ -29,10 +32,15 @@ export class MovieDetailComponent implements OnInit {
     this.movieService.getMovie(id).subscribe(data => {
       
       this.movie = data
+      this.genresList= this.movie.genres
       console.log('data: ', data)
       
     }
       );
+  }
+
+  getDate(date: string){
+    return date.substring(0,4);
   }
 
 
