@@ -29,7 +29,9 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.sass"
+              "src/styles.sass",
+              "src/contrast.sass",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
