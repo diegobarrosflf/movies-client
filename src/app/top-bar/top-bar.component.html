@@ -1,5 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" [routerLink]="['/home']">My Movies</a>
+  <a class="navbar-brand" [routerLink]="['/home']">
+    <span class="icon fa fa-film"></span> Diego Movies
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -18,9 +20,25 @@
     </ul>
     <ul class="navbar-nav my-2 my-lg-0">
       <li class="nav-item">
-        <a class="nav-link" id="bt-autocontraste" title="" (click)="changeHighContrast()" data-toggle="tooltip" data-placement="bottom"
-          data-original-title="Ativar o alto contraste" >          
+        <a class="nav-link" id="bt-autocontraste" (click)="changeHighContrast()" aria-label="Ativar o alto contraste">
           <span class="fa fa-adjust font-icon"></span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" id="bt-aumentar-fonte" (click)="increaseFont()" aria-label="Aumentar fonte">
+          <span class="font-icon">A<small><span class="icon fas fa-plus"></span></small
+          ></span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" id="bt-resetar-fonte" (click)="resetFont()" aria-label="Restaurar fonte">
+          <span aria-hidden="true" class="font-icon">A</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" id="bt-diminuir-fonte" (click)="decreaseFont()" aria-label="Diminuir fonte">
+          <span class="font-icon">A<small><span class="icon fas fa-minus"></span></small
+          ></span>
         </a>
       </li>
     </ul>
