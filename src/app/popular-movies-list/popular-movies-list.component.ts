@@ -9,6 +9,8 @@ import { MovieService } from '../services/movie.service';
 export class PopularMoviesListComponent implements OnInit {
 
   popularMovies;
+  upComingMovies;
+  qtdMovies = 10;
   
  
 
@@ -19,13 +21,23 @@ export class PopularMoviesListComponent implements OnInit {
   ngOnInit(): void {
 
     this.getPopularMovies();
+    this.getUpComingMovies();
+    
   }
 
   getPopularMovies(){
     this.movieService.getPopularMovies().subscribe(
       data => {
-        this.popularMovies = data.results.slice(0,10);
+        this.popularMovies = data.results.slice(0,this.qtdMovies);
         
+      }
+    )
+  }
+
+  getUpComingMovies(){
+    this.movieService.getUpComingMovies().subscribe(
+      data =>{
+        this.upComingMovies = data.results.slice(0,this.qtdMovies);
       }
     )
   }

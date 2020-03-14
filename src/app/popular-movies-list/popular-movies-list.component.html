@@ -1,2 +1,7 @@
-<h3 class="mt-5">Popular Movies</h3>
-<app-movie-list [movieList]="popularMovies"></app-movie-list>
+<div class="body">
+    <h2 class="mt-5 mb-4"> <span class="fas fa-star"></span> Popular Movies</h2>
+    <app-movie-list [movieList]="popularMovies"></app-movie-list>
+
+    <h2 class="my-4"> <span class="fas fa-meteor"></span> Up Coming Movies</h2>
+    <app-movie-list [movieList]="upComingMovies"></app-movie-list>
+</div>

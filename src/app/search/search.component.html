@@ -1,5 +1,5 @@
 <div id="search-component" class="shadow-sm search input-group">
-    <input #searchBox id="search-box" (input)="searchMoviesByName(searchBox.value)" (click)="searchBox.value = null"
+    <input #searchBox autocomplete="off" id="search-box" (input)="searchMoviesByName(searchBox.value)" (click)="searchBox.value = null"
     class="form-control mr-sm-2" type="text" placeholder="Search..." aria-label="Search"/>
 
 

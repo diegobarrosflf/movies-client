@@ -1,5 +1,5 @@
 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-    <div *ngFor="let genre of genres">
+    <div class="genre-list" *ngFor="let genre of genres">
         <a class="dropdown-item" [routerLink]="['/genre/' + genre.id + '/' + genre.name]">{{genre.name}}</a>
     </div>
 </div>

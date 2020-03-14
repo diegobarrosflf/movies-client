@@ -31,6 +31,7 @@ import { PopularMoviesListComponent } from './popular-movies-list/popular-movies
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot([
+      { path: '', component: PopularMoviesListComponent},
       { path: 'home', component: PopularMoviesListComponent},
       { path: 'genre/:id/:name', component: GenreComponent},
       { path: 'movie/:movieId', component: MovieDetailComponent},
