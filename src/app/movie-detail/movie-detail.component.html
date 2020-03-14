@@ -1,20 +1,26 @@
-<h3 class="mt-5">Movie Details</h3>
-<div class="card m-3">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="http://image.tmdb.org/t/p/w185/{{movie.poster_path}}" class="card-img" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h2 class="card-title">{{movie.title}}</h2>
-        <p>{{getDate(movie.release_date)}}</p>
-        <p>Users Score {{movie.vote_average}}</p>
-        <h4>Overview</h4>
-        <p class="card-text">{{movie.overview}}</p>
-        <h5>Genres</h5>
-        <p *ngFor="let genre of genresList">{{genre.name}}</p>
-        <p class="card-text"><small class="text-muted">{{movie.runtime}} min</small></p>
+<div class="container my-5">
+  <div class="row p-5 card-detail">
+    <div class="col-sm-4">
+      <img src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}" class="card-img" alt="...">
+    </div>    
+    <div class="col-sm-8">      
+      <div class="title-movie py-3"> 
+        <span>
+          <h1>{{movie.title}}
+            <span>{{getDate(movie.release_date)}}</span>
+          </h1>
+        </span>
+        
+        <h4 class="my-3">Score <span class="user-score">{{movie.vote_average}}</span></h4> 
+        <p class="card-text"><small >{{movie.runtime}} min</small></p>
       </div>
-    </div>
+      <div>
+        <h4>Overview</h4>
+        <p >{{movie.overview}}</p></div>
+        <h4>Genres</h4>
+        <ul>
+          <li *ngFor="let genre of genresList">{{genre.name}}</li>
+        </ul>
+    </div>  
   </div>
 </div>

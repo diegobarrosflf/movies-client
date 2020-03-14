@@ -24,25 +24,17 @@ export class MovieDetailComponent implements OnInit {
       this.getMovie(this.movieId);
     });
   
-    
-    
   }
 
   getMovie(id) {
     this.movieService.getMovie(id).subscribe(data => {
-      
       this.movie = data
-      this.genresList= this.movie.genres
-      console.log('data: ', data)
-      
-    }
-      );
+      this.genresList= this.movie.genres      
+    });
   }
 
   getDate(date: string){
     return date.substring(0,4);
   }
-
-
 
 }
