@@ -19,7 +19,11 @@
         <p >{{movie.overview}}</p></div>
         <h4>Genres</h4>
         <ul>
-          <li *ngFor="let genre of genresList">{{genre.name}}</li>
+          <li class="genre-list" *ngFor="let genre of genresList">
+            <a [routerLink]="['/genre/' + genre.id + '/' + genre.name]">
+              {{genre.name}}
+            </a>
+          </li>
         </ul>
     </div>  
   </div>
