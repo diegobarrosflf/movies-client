@@ -12,8 +12,6 @@ export class PopularMoviesListComponent implements OnInit {
   upComingMovies;
   qtdMovies = 10;
   
- 
-
   constructor(
     private movieService: MovieService
   ) { }

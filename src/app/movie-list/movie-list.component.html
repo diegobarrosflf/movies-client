@@ -1,13 +1,18 @@
-<div class="row body">
-    <div class="col-sm-2 m-3" *ngFor="let movie of movieList">
-        <div class="card shadow-lg">
-            <a [title]="'Details'" [routerLink]="['/movie', movie.id]">
-                <img src="http://image.tmdb.org/t/p/w185/{{movie.poster_path}}" class="card-img-top" alt="...">            
-            </a>
-            <div class="card-body">
-              <h5 class="card-title">{{movie.title}}</h5>
-              <p>{{getDate(movie.release_date)}}</p>
-            </div>
-          </div>
+
+<div class="container">
+
+  <div class="row body">
+    <div class="p-3 card-list" *ngFor="let movie of movieList">
+      <div class="card shadow-lg">
+        <a [title]="'Details'" [routerLink]="['/movie', movie.id]">
+          <img src="http://image.tmdb.org/t/p/w185/{{movie.poster_path}}" class="card-img-top" alt="...">            
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">{{movie.title}}</h5>
+          <p>{{getDate(movie.release_date)}}</p>
+        </div>
+      </div>
     </div>
+  </div>
+  
 </div>

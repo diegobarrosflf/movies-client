@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "moviesdb-2cba6": {
+      "hosting": {
+        "movies-client": [
+          "moviesdb-2cba6"
+        ]
+      }
+    }
+  }
+}

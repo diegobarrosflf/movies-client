@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "movies-client",
+      "public": "dist/movies-client",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

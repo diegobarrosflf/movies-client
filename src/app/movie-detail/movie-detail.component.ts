@@ -11,7 +11,7 @@ export class MovieDetailComponent implements OnInit {
 
   movieId;
   movie;
-  genresList;
+  genresList; 
 
   constructor(
     private route: ActivatedRoute,
@@ -29,7 +29,7 @@ export class MovieDetailComponent implements OnInit {
   getMovie(id) {
     this.movieService.getMovie(id).subscribe(data => {
       this.movie = data
-      this.genresList= this.movie.genres      
+      this.genresList = this.movie.genres;
     });
   }
 
