@@ -4,17 +4,27 @@
   cursor: pointer
   list-style-type: none
   font-weight: 600
+  border-top: 1px solid #474b7a1c
   &:hover
     background-color: #06081791
     a
       color: white
+    span
+      color: #9b9cae
   a
     color: #474b7a
-    display: block
+    display: flex
     text-decoration: none
 
     &:hover, &:active
       color: white
+img
+  margin-right: 10px
+  max-height: 63px
+  min-height: 63px
+  max-width: 43px
+  min-width: 43px
+  border-radius: 0
 
 #search-box
   width: 100%
@@ -30,3 +40,6 @@ ul.search-result
 .search
     display: inline
     z-index: 99
+
+.date
+  color: gray  

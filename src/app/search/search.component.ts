@@ -27,4 +27,9 @@ export class SearchComponent implements OnInit {
       this.movies = [];
     }
   }
+
+  getDate(date: string){
+    return date.substring(0,4);
+  }
+
 }

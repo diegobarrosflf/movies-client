@@ -5,9 +5,12 @@
 
     <ul class="search-result" [hidden]="searchBox.value === ''">
         <li *ngFor="let movie of movies">
-          <a routerLink="/movie/{{movie.id}}" (click)="searchBox.click()">
-            {{movie.title}}
-          </a>
+            <a routerLink="/movie/{{movie.id}}" (click)="searchBox.click()">
+              <img src="http://image.tmdb.org/t/p/w92/{{movie.poster_path}}" class="card-img" alt="...">
+              <div>{{movie.title}}
+                <p class="date">{{getDate(movie.release_date)}}</p>
+              </div>
+            </a>
         </li>
     </ul>
 
